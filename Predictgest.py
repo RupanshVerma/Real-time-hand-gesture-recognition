@@ -56,40 +56,7 @@ def predict(frame,y_test_images):
     # result is of this format [probabiliy_of gest0,......,probability_of_gest9]
     return np.array(result)
 
-####TestData prediction
-##testpath='C:/Users/Raj Shah/Downloads/cv-tricks.com-master/Tensorflow-tutorials/tutorial-2-image-classifier/Testdata'
-##for i in glob(testpath+"/*"):
-##    print(i)
-##    filename =i
-##    image_size=50
-##    num_channels=3
-##    images = []
-##    # Reading the image using OpenCV
-##    image = cv2.imread(filename)
-##    #image=frame
-##    cv2.imshow('test',image)
-##    
-##    # Resizing the image to our desired size and preprocessing will be done exactly as done during training
-##    image = cv2.resize(image, (image_size, image_size),0,0, cv2.INTER_LINEAR)
-##    images.append(image)
-##    images = np.array(images, dtype=np.uint8)
-##    images = images.astype('float32')
-##    images = np.multiply(images, 1.0/255.0)
-##
-##    #The input to the network is of shape [None image_size image_size num_channels]. Hence we reshape.
-##    x_batch = images.reshape(1, image_size,image_size,num_channels)
-##
-##    ### Creating the feed_dict that is required to be fed to calculate y_pred 
-##    feed_dict_testing = {x: x_batch, y_true: y_test_images}
-##    result=sess.run(y_pred, feed_dict=feed_dict_testing)
-##    # result is of this format [probabiliy_of_rose probability_of_sunflower]
-##    np.set_printoptions(formatter={'float_kind':'{:f}'.format})
-##    print(result)
-##    print(np.argmax(max(result)))
-##    k = cv2.waitKey()
-##    if k == 99:
-##        continue
-   
+
 #Open Camera object
 cap = cv2.VideoCapture(0)
 
